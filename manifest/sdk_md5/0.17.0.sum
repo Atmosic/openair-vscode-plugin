@@ -1,0 +1,15 @@
+22f14b617f0ceee13024f3b23ee3a926  toolchain_linux-aarch64_arm-zephyr-eabi.tar.xz
+f31f72db59b24d04f17f26bdd1524681  toolchain_linux-x86_64_arm-zephyr-eabi.tar.xz
+db64c39b87f971a8326bd9b83083c7f6  toolchain_macos-aarch64_arm-zephyr-eabi.tar.xz
+4919b741a6c2edd8e9fa1cc46decfa21  toolchain_macos-x86_64_arm-zephyr-eabi.tar.xz
+6b3d48e225184a83baf0651aa1db7708  toolchain_windows-x86_64_arm-zephyr-eabi.7z
+b10307da793138523b9f910a512af32f  zephyr-sdk-0.17.0_linux-aarch64.tar.xz
+501e609b7ab05502990a2052b98619e5  zephyr-sdk-0.17.0_linux-aarch64_minimal.tar.xz
+6258ad73b9543f6d3885b86f9708a53e  zephyr-sdk-0.17.0_linux-x86_64.tar.xz
+adcfce8bb0450a577cc00c10095c5730  zephyr-sdk-0.17.0_linux-x86_64_minimal.tar.xz
+c30413fd1519e618561706e35f837974  zephyr-sdk-0.17.0_macos-aarch64.tar.xz
+6901ee038f42b737e645d3e29493ba73  zephyr-sdk-0.17.0_macos-aarch64_minimal.tar.xz
+5dadda73baa56f5caf09eb67efdcc778  zephyr-sdk-0.17.0_macos-x86_64.tar.xz
+07bef736afed248203ce7d24b9a790dd  zephyr-sdk-0.17.0_macos-x86_64_minimal.tar.xz
+a7c7a973dca18399a656e9c9e47c4e6e  zephyr-sdk-0.17.0_windows-x86_64.7z
+786996756d4fa443ba1d94faa10cd334  zephyr-sdk-0.17.0_windows-x86_64_minimal.7z
