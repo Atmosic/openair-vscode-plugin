@@ -1,55 +1,39 @@
-#  Zephyr IDE for VS Code
+# openair-vscode-plugin
 
-<img src="https://raw.githubusercontent.com/mylonics/zephyr-ide/main/docs/media/zephyr-ide_branding.png" alt="Zephyr IDE for Visual Studio Code" width="50%"/>
+Steps for the installation of Atmosic IDE plugin in VS code
 
-The Zephyr IDE for VS code extension provides tools to aide in your Zephyr Project work flow. This extension helps you to build Zephyr projects and share them with your team.
+1)Clone the repository using the "git clone" command
 
-Please check out our new [extension pack](https://marketplace.visualstudio.com/items?itemName=mylonics.zephyr-ide-extension-pack) that bundles in additional tools.
-
-You can read a little bit more about the motivation behind the project [here](https://mylonics.com/blog/zephyr-ide-for-vscode/).
-
-## Features
-  - Sets up a west environment
-  - Downloads the Zephyr SDK
-  - Provides west.yml templates to start with or you can provide your own
-  - Allows you to add projects from scratch or from templates
-  - Create multiple projects
-  - For each project, you can create multiple builds
-  - Each project may have its own kconfig files and overlay files
-  - Each build may have a unique board, kconfig files, and overlay files and runner
-  - Each build may be bound to a launch/debug configuration for debug, build and debug and attach.
-  - GUI Panels to show the full project tree and active projects
-  - Automatically changing active project based on the last viewed file in the editor
-  - All commands that are available in the GUI are available in the command palette.
-  - Provides useful functions to set up custom launch/debug configurations
-  - Provides the user with a terminal to manually run west commands
-  - Saves/loads project structure to workspace in a human readable and editable file
+2)Open the cloned repository in the Termiinal and install the required dependencies below.
+	
+	2.1) Run "npm install" to install the node dependenices
+	
+	2.2) Run "npm install esbuild --save-dev" to install the esbuild dependencies
+	
+	2.3) Run "npm install -g vsce" helps install the vsce tool globally, which is essential for packaging and publishing our plugin to the Visual Studio Code Marketplace
 
 
-## Getting Started
-There is a [manual](docs/MANUAL.md) available to help get started along with a couple Youtube tutorials.
+3)Once the installation is done run "vsce package" inside the folder which generates a vsix file in the same folder.
 
-[![Getting Started with Zephyr IDE](https://mylonics.com/assets/images/zephyr-ide/getting_started_thumbnail.png)](https://www.youtube.com/watch?v=Asfolnh9kqM&t "Getting Started with Zephyr IDE")
+4)Open VS code and go to the extensions section and click on "..." and find the install from VSIX... option and import the vsix file generated previously.
 
-[![STM32 Board Setup And Debugging with Zephyr IDE](https://mylonics.com/assets/images/zephyr-ide/board_setup_thumbnail.png)](https://www.youtube.com/watch?v=TXcTzyswBMQ)
+5)This will add the atmosic plugin to the side container of the VS Code.
 
-You can have a look at this [sample directory](https://github.com/mylonics/zephyr-ide-sample-project) to also help with getting started and sharing project. 
-## Requirements
+#Steps to initialise workspace
 
-In order for this application to work correctly the zephyr require build tools need to be installed and available on the path. These include cmake, python3, and Devicetree Compiler. 
+1) Create an empty folder and open it in VS code
 
-See the [Install Dependecies Section of the Zephyr Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html#install-dependencies)
+2) Open Atmosic IDE extension click on "workspace" button 
 
-For ubuntu please also install python3-venv by ```sudo apt install python3-venv```
+3)Click on "Initialize Workspace" button and select the toolchain, west repo,branch to clone and wait for the initialisation to complete from setting the west environment to west update.
 
-## Known Issues
-* macOS compatibility is untested. Please make an issue on our github page with any incompatibilities found.
+#Steps to Build and Flash the sample
 
-## Release Notes
-See [CHANGELOG](CHANGELOG.md) for release notes
+1) Click on "+" in PROJECTS section and select the sample.Click on "Add Build" and select "Atmosic DIrectory Only"option to select the board atm33/34.
 
-## Development and Debugging
+2)Add or skip build optimization options, skip the Additional Build Arguments,
+Add CMake Arguments if additional Configs needs to be added just like "-DEXTRA_CONF_FILE=overlay-bt.conf" while building dfu over ble.
 
-See the [Zephyr IDE for VS Code Developer's Guide](developer-guide.md) for development and debugging instructions.
+3)Building the sample can be done in different ways like with sysbuild, without sysbuild(builds mcuboot, spe, app), build SPE-NSPE, build without MCUBOOT.
 
----
+4)To flash the sample, add a runner and select the appropriate runner that matches the case you used to build the sample.For example, if you build with sysbuild select "sysbuild" runner.
